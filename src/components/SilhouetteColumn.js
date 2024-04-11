@@ -1,7 +1,7 @@
 import { Droppable } from "react-beautiful-dnd";
 import StaticFlag from "./StaticFlag";
 
-export default function SilhouetteColumn({ id, imageUrl, flag, countryName }) {
+const SilhouetteColumn = ({ id, imageUrl, flag, countryName }) => {
   return (
     <>
       <Droppable droppableId={id}>
@@ -10,8 +10,7 @@ export default function SilhouetteColumn({ id, imageUrl, flag, countryName }) {
             ref={provided.innerRef}
             {...provided.droppableProps}
             className="silhouetteColumn"
-            style={{ backgroundImage: `url(assets/silhouettes/${imageUrl})` }}
-          >
+            style={{ backgroundImage: `url(assets/silhouettes/${imageUrl})` }}>
             {flag.length === 1 ? (
               <>
                 {flag.map((flag) => (
@@ -27,4 +26,5 @@ export default function SilhouetteColumn({ id, imageUrl, flag, countryName }) {
       </Droppable>
     </>
   );
-}
+};
+export default SilhouetteColumn;

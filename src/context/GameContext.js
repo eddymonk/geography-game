@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState, useCallback } from "react";
 import { levels } from "../utils/levels";
 import shuffle from "../utils/shuffleArray";
 
@@ -26,7 +26,7 @@ export const GameProvider = ({ children }) => {
 
   const [error, setError] = useState(null);
 
-  const setMatch = () => {
+  const setMatch = useCallback(() => {
     let randInt = Math.floor(Math.random() * levels.length);
 
     if (matchEnded) {
@@ -49,7 +49,6 @@ export const GameProvider = ({ children }) => {
       silhouettes.push({
         id: country.id,
         name: country.name,
-
         imageUrl: country.silhouette,
         flag: [],
       });
@@ -73,13 +72,13 @@ export const GameProvider = ({ children }) => {
 
     setMinutes(1);
     setSeconds(30);
-  };
+  }, [matchEnded, currentLevel]);
 
   useEffect(() => {
     if (startMatch) {
       setMatch();
     }
-  }, [startMatch]);
+  }, [setMatch, startMatch]);
 
   useEffect(() => {
     let interval;

@@ -1,10 +1,9 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { Droppable } from "react-beautiful-dnd";
 import { GameContext } from "../context/GameContext";
 import DraggableFlag from "./DraggableFlag";
-import Timer from "./Timer";
 
-export default function DraggableFlagsContainer() {
+const DraggableFlagsContainer = () => {
   const { matchDraggableFlags } = useContext(GameContext);
 
   return (
@@ -14,8 +13,7 @@ export default function DraggableFlagsContainer() {
           <menu
             ref={provided.innerRef}
             {...provided.droppableProps}
-            className="draggableFlagsContainer"
-          >
+            className="draggableFlagsContainer">
             {matchDraggableFlags.map((draggableFlag, index) => (
               <DraggableFlag
                 key={draggableFlag.id}
@@ -30,4 +28,6 @@ export default function DraggableFlagsContainer() {
       </Droppable>
     </>
   );
-}
+};
+
+export default DraggableFlagsContainer;

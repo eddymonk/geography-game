@@ -8,7 +8,7 @@ import HowToPlayBox from "./HowToPlayBox";
 import SilhouettesGridContainer from "./SilhouettesGridContainer";
 import Timer from "./Timer";
 
-export default function GameApp() {
+const GameApp = () => {
   const {
     startMatch,
     setStartMatch,
@@ -32,8 +32,7 @@ export default function GameApp() {
               />
               <button
                 className="playAgainBtn"
-                onClick={() => setStartMatch(true)}
-              >
+                onClick={() => setStartMatch(true)}>
                 Play
               </button>
               <HowToPlayBox />
@@ -68,4 +67,6 @@ export default function GameApp() {
       </DragDropContext>
     </>
   );
-}
+};
+
+export default GameApp;

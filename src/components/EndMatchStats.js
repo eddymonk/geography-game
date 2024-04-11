@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { GameContext } from "../context/GameContext";
 
-export default function EndMatchStats() {
+const EndMatchStats = () => {
   const {
     playerWon,
     matchSilhouettesColumns,
@@ -39,4 +39,6 @@ export default function EndMatchStats() {
       </figure>
     </>
   );
-}
+};
+
+export default EndMatchStats;

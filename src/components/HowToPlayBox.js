@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function HowToPlayBox() {
+const HowToPlayBox = () => {
   const [clicked, setClicked] = useState(false);
   return (
     <>
@@ -28,7 +28,9 @@ export default function HowToPlayBox() {
               }}
               alt="Game Preview"
             />
-            <h1 style={{ fontSize: "18px", margin: "0px", marginTop:"10px" }}>Rules:</h1>
+            <h1 style={{ fontSize: "18px", margin: "0px", marginTop: "10px" }}>
+              Rules:
+            </h1>
             <li>
               <p>
                 - Each mistake made removes a guessed flag (in case you have
@@ -42,4 +44,6 @@ export default function HowToPlayBox() {
       </div>
     </>
   );
-}
+};
+
+export default HowToPlayBox;

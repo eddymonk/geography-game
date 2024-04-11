@@ -187,7 +187,7 @@ menu {
   display: flex;
   flex-direction: column;
   padding: 10px;
-  border: 2px solid #b16d4d;
+  border: 2px solid #000000;
   border-radius: 5px;
 
   min-width: 360px;
@@ -212,7 +212,7 @@ menu {
     }
   }
 
-  background-color: #e5d09b;
+  background-color: #ff89a3;
 
   @media screen and (max-width: 1024px) {
     img {

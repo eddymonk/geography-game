@@ -1,16 +1,14 @@
 import GameApp from "./components/GameApp";
 import { GameProvider } from "./context/GameContext";
 
-function App() {
+const App = () => {
   return (
-    <>
-      <GameProvider>
-        <div className="App">
-          <GameApp />
-        </div>
-      </GameProvider>
-    </>
+    <GameProvider>
+      <div className="App">
+        <GameApp />
+      </div>
+    </GameProvider>
   );
-}
+};
 
 export default App;

@@ -1,9 +1,8 @@
 import { useContext } from "react";
 import { GameContext } from "../context/GameContext";
 import SilhouetteColumn from "./SilhouetteColumn";
-import Timer from "./Timer";
 
-export default function SilhouettesGridContainer() {
+const SilhouettesGridContainer = () => {
   const { matchSilhouettesColumns, error, setError } = useContext(GameContext);
   return (
     <div
@@ -12,8 +11,7 @@ export default function SilhouettesGridContainer() {
         flexDirection: "column",
         alignItems: "center",
         width: "100%",
-      }}
-    >
+      }}>
       {error ? (
         <p onClick={() => setError(null)} className="errorParagraph">
           <i className="bi bi-x-circle-fill" /> {error}
@@ -32,4 +30,6 @@ export default function SilhouettesGridContainer() {
       </section>
     </div>
   );
-}
+};
+
+export default SilhouettesGridContainer;
